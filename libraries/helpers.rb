@@ -15,6 +15,10 @@ module Rackbox
         run_template_name  config["template_name"]
         log_template_name  config["template_name"]
         cookbook       config["template_cookbook"]
+        sv_dir      File.join(node["appbox"]["apps_dir"], "sv")
+        service_dir File.join(node["appbox"]["apps_dir"], "service")
+        owner node["appbox"]["apps_user"]
+        group node["appbox"]["apps_user"]
         options(
           :user              => node["appbox"]["apps_user"],
           :group             => node["appbox"]["apps_user"],
@@ -42,6 +46,10 @@ module Rackbox
         run_template_name  config["template_name"]
         log_template_name  config["template_name"]
         cookbook       config["template_cookbook"]
+        sv_dir      File.join(node["appbox"]["apps_dir"], "sv")
+        service_dir File.join(node["appbox"]["apps_dir"], "service")
+        owner node["appbox"]["apps_user"]
+        group node["appbox"]["apps_user"]
         options(
           :user                 => node["appbox"]["apps_user"],
           :group                => node["appbox"]["apps_user"],
